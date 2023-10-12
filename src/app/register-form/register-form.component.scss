@@ -1,0 +1,126 @@
+h2 {
+    font-family: var(--font-family-bold);
+    color: var(--prussian-blue);
+    text-align: center;
+    margin: 6vh;
+    font-size: 3.2vh;
+
+}
+
+h3 {
+    font-family: var(--font-family-bold);
+    color: var(--prussian-blue);
+    font-size: 2.3vh;
+}
+
+.container {
+    background-color: var(--athens-gray);
+    height: 80vh;
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.application-form {
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.input-field-flex {
+    display: flex;
+    gap: 0.01vh;
+    margin-bottom: 1vh;
+}
+
+input {
+    font-family: var(--font-family-light);
+    box-shadow: 3px 3px 5px var(--dove-gray);
+    border: 1.5px solid var(--prussian-blue);
+    height: 2.5vh;
+}
+
+.input-field-flex>div {
+    width: 50%;
+}
+
+.input-field-flex>div>input {
+    width: 23vw;
+}
+
+label {
+    color: var(--prussian-blue);
+    font-size: 2vh;
+    font-family: var(--font-family-medium);
+    display: block;
+}
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.input-field>input {
+    width: 48vw;
+}
+
+div {
+    margin-bottom: 1vh;
+}
+
+.input-field-flex-three {
+    display: flex;
+    gap: 9vh;
+    margin-top: 2vh;
+}
+
+.select-from {
+    width: 13vw;
+    height: 2.5vh;
+    box-shadow: 3px 3px 5px var(--dove-gray);
+    font-family: var(--font-family-light);
+    border: 1.5px solid var(--prussian-blue);
+}
+
+.select-from:hover {
+    cursor: pointer;
+}
+
+.sign-up-button {
+    position: sticky;
+    justify-self: end;
+    border-radius: 3vh;
+    border: 0px;
+    height: 4vh;
+    width: 12vw;
+    font-family: var(--font-family-medium);
+    background-color: var(--school-bus-yellow);
+    color: black;
+    font-size: 1.8vh;
+    float: right;
+    margin-top: 10vh;
+    box-shadow: 3px 3px 5px var(--dove-gray);
+}
+
+.sign-up-button:hover {
+    cursor: pointer;
+}
+
+.error-border {
+    border: 1px solid red;
+}
+
+.error-message {
+    flex: 1;
+    color: red;
+    font-family: var(--font-family-regular);
+}
+
+.end-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px; /* Adjust spacing as needed */
+    align-items: center;
+}
+
+.has-errors {
+    flex-direction: column;
+}

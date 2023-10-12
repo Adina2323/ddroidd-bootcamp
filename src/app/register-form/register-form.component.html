@@ -1,0 +1,79 @@
+<body>
+    <div class="container">
+        <h2> Application Form </h2>
+        <form class = "application-form" [formGroup]="applyForm" (ngSubmit)="add()">
+            <h3>Contact Information</h3>
+            <div class="input-field-flex">
+                <div >
+                    <label for="firstName" style="font-family: var(--font-family-bold)">First Name<span style="color:red">*</span></label>
+                    <input id="firstName" type="text" placeholder="First name" formControlName="firstName"
+                    [ngClass]="{ 'error-border': joinUsClicked  && !isFormControlValid('firstName') }">
+                </div>
+                <div>
+                    <label for="lastName" style="font-family: var(--font-family-bold)"> Last Name<span style="color:red">*</span></label>
+                    <input id="lastName" type="text" placeholder="Last name" formControlName="lastName"
+                    [ngClass]="{ 'error-border': joinUsClicked  && !isFormControlValid('lastName') }">
+                </div>
+            </div>
+            <div class="input-field-flex">
+                <div>
+                    <label for="phoneNumber">Phone Number<span style="color:red">*</span></label>
+                    <input id="phoneNumber" type="text" placeholder="+40 711 111 111" formControlName="phoneNumber"
+                    [ngClass]="{ 'error-border': joinUsClicked  && !isFormControlValid('phoneNumber') }">  
+                </div>
+                <div>
+                    <label for="emailAddress">Email Address<span style="color:red">*</span></label>
+                    <input id="emailAddress" type="text" placeholder="john@doe.com" formControlName="emailAddress"
+                    [ngClass]="{ 'error-border': joinUsClicked  && !isFormControlValid('emailAddress') }">
+                </div>
+            </div>
+            <h3>Address</h3>
+            <div class="input-field">
+                <label for="addressLine1">Address Line 1<span style="color:red">*</span></label>
+                <input id="addressLine1" type="text" placeholder="Street name & number" formControlName="lineAddress1"
+                [ngClass]="{ 'error-border': joinUsClicked  && !isFormControlValid('lineAddress1') }">
+            </div>
+            <div class="input-field">
+                <label for="addressLine2">Address Line 2</label>
+                <input id="addressLine2" type="text" placeholder="Suite & Apartment" formControlName="lineAddress2">
+            </div>
+
+            <div class="input-field-flex-three">
+                <div>
+                    <label for="countrySelect">Country<span style="color:red">*</span></label>
+                    <select  class="select-from" formControlName="countrySelect" id="countrySelect" (change)="updateStates($event)"
+                    [ngClass]="{ 'error-border': joinUsClicked  && !isFormControlValid('countrySelect') }">
+                      <option value="" disabled selected>Select a Country</option>
+                      <option *ngFor="let country of countries" [value]="country.country">{{ country.country }}</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label for="stateSelect">State</label>
+                    <select  class="select-from"  formControlName="stateSelect" id="stateSelect" (change)="updateCities($event)" >
+                      <option value="" disabled selected>No State Found</option>
+                      <option *ngFor="let state of states" [value]="state.name">{{ state.name }}</option>
+                    </select>
+                  </div>
+                  
+
+                  <div>
+                    <label for="citySelect">City<span style="color:red">*</span></label>
+                    <select class="select-from"  formControlName="citySelect" id="citySelect"
+                    [ngClass]="{ 'error-border': joinUsClicked  && !isFormControlValid('citySelect') }">
+                      <option value="" disabled selected>Select a City</option>
+                      <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+                    </select>
+                  </div>
+                  
+            </div>
+            <div class="end-container" [ngClass]="{ 'has-errors': hasFormErrors }">
+                <div class="error-message" *ngIf="errorMessage.length > 0">
+                    Please fix the following errors to proceed:
+                    <li *ngFor="let error of errorMessage">{{ error }}</li>
+                </div>
+                <button class="sign-up-button" type="submit">Join Us</button>
+            </div>
+        </form>
+    </div>
+</body>

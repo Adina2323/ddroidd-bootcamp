@@ -1,0 +1,24 @@
+.container{
+    background-color: var(--athens-gray);
+    height: 80vh;
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h2 {
+    font-family: var(--font-family-bold);
+    color: var(--prussian-blue);
+    text-align: center;
+    margin: 6vh;
+    font-size: 4vh;
+
+}
+
+.display-data{
+    margin: auto;
+}
+
+.display-data>pre{
+    font-family: var(--font-family-bold);
+}

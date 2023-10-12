@@ -1,0 +1,49 @@
+.toolbar {
+  overflow: hidden;
+  position: sticky;
+  display: block;
+
+  padding-left: 1.87%;
+  //padding-right: 30%;
+  padding-right: 1%;
+  height: 10vh;
+  align-items: center;
+  background-color: var(--prussian-blue);
+  color: white;
+}
+
+.logo {
+  width: 11vw;
+
+}
+
+.toolbar h1 {
+  color: white;
+  font-weight: var(--font-weight-regular);
+  font-size: 4.5vh;
+  text-align: center;
+  flex: 1;
+  align-self: center;
+
+}
+
+.toolbar-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.sign-up-button {
+  border-radius: 3vh;
+  border: 0px;
+  height: 4vh;
+  width: 12vw;
+  font-family: var(--font-family-medium);
+  background-color: var(--school-bus-yellow);
+  color: black;
+  font-size: 2vh;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
